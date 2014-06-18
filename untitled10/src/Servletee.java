@@ -9,10 +9,14 @@ import java.io.IOException;
  * Created by bilal on 17/06/14.
  */
 public class Servletee extends HttpServlet {
+    //   int syc=1;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+     //   syc++;
+        //   request.setAttribute("sayac",String.valueOf(syc));
         HttpSession session = request.getSession(true);
         if(request.getParameter("fname")!=null){
             session.setAttribute("name",request.getParameter("fname"));

@@ -16,9 +16,10 @@
 
     <input type="submit"  value="set">
 </form>
-<button onclick="window.location.href='?action=1'">get</button>
+<button onclick="window.location.href='?action=1'">geeeet</button>
 <button onclick="window.location.href='?action=2'">del</button>
 <p>result: ${todo}</p>
-
+<p>sayac:</p>
+sdsad
 </body>
 </html>
