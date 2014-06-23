@@ -22,6 +22,7 @@ in "Context" and "/Context" tags.
 
 <h2>How to Run Sample Application</h2>
 
+BEFORE-STARTING : Make sure tomcat-installation-path/startup.sh and tomcat-installation-path/shutdown.sh are executable. You can make them executable via `chmod +x startup.sh` and `chmod +x shutdown.sh` if your working directory is tomcat-installation-path. 
 
 1) go to tomcat-installation-path/bin and run startup.sh shell file from terminal.
 
