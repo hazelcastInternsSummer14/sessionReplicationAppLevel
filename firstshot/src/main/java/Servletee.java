@@ -34,7 +34,7 @@ public class Servletee extends HttpServlet {
             session.setAttribute("name",request.getParameter("fname"));
         }
         if(request.getParameter("action")!=null) {
-            if (request.getParameter("action").equals("1")) {
+            if (request.getParameter("action").equals("1") && session.getAttribute("name")!=null) {
                 session.setAttribute("todo", session.getAttribute("name"));
             }
             if (request.getParameter("action").equals("2")) {
