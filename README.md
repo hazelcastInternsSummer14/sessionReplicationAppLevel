@@ -16,7 +16,7 @@ Finally, open tomcat7-installation-folder/conf/context.xml file and add this lin
 
 `<Manager className="com.hazelcast.session.HazelcastSessionManager" sticky="true"/>`
 
-in <context> and </context> tags.
+in "<context>" and "</context>" tags.
 <br />
 <br />
 
