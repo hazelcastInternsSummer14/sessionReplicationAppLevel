@@ -13,7 +13,18 @@ Extract .zip file. Drop hazelcast-3.3-EA2-ee.jar and hazelcast-sessions-tomcat7-
 Next, you must put Hazelcast.xml file to tomcat-installation-directory/lib . You can find a sample Hazelcast.xml file under extracted-hazelcast-folder/bin .
 <br />
 <br />
-ToolBase.js - Abstract base class for painting Tools<br />
-*****Tool.js - Painting tool implementations, pencil, brush, circle, spray, etc.<br />
 
-Sample Web Session Replication App through Hazelcast
+<h2>How to Run Sample Application</h2>
+
+
+1) go to tomcat-installation-path/bin and run startup.sh shell file from terminal.
+
+2) clone the repository via git clone https://github.com/hazelcastInternsSummer14/sessionReplicationApp.git
+
+3) then go to sessionReplicationApp/firsthot folder.
+
+4) run maven via sudo mvn tomcat:deploy
+
+5) maven creates firstshot.war file under sessionReplicationApp/firsthot/target folder.
+
+6) copy 
