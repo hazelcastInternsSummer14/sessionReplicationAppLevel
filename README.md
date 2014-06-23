@@ -12,10 +12,11 @@ Extract .zip file. Drop hazelcast-3.3-EA2-ee.jar and hazelcast-sessions-tomcat7-
 
 Next, you must put hazelcast.xml file to tomcat-installation-directory/lib . You can find a sample hazelcast.xml file under extracted-hazelcast-folder/bin .
 
-Finally, open tomcat7-installation-folder/conf/target.xml file and add
+Finally, open tomcat7-installation-folder/conf/context.xml file and add this line
 
 `<Manager className="com.hazelcast.session.HazelcastSessionManager" sticky="true"/>`
 
+in <context> and </context> tags.
 <br />
 <br />
 
