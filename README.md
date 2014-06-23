@@ -18,7 +18,6 @@ Finally, open tomcat7-installation-folder/conf/context.xml file and add this lin
 
 in "Context" and "/Context" tags.
 <br />
-<br />
 
 <h2>How to Run Sample Application</h2>
 
