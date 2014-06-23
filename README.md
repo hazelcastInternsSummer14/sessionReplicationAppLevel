@@ -25,11 +25,11 @@ in "context" and "/context" tags.
 
 1) go to tomcat-installation-path/bin and run startup.sh shell file from terminal.
 
-2) clone the repository via git clone `https://github.com/hazelcastInternsSummer14/sessionReplicationApp.git`
+2) clone the repository via `git clone https://github.com/hazelcastInternsSummer14/sessionReplicationApp.git`
 
 3) then go to sessionReplicationApp/firsthot folder.
 
-4) run maven via sudo `mvn tomcat:deploy``
+4) run maven via sudo `mvn tomcat:deploy`
 
 5) maven creates firstshot.war file under sessionReplicationApp/firsthot/target folder.
 
