@@ -35,6 +35,6 @@ in "context" and "/context" tags.
 
 6) copy firstshot.war file to tomcat7-installation-path/webapps folder
 
-7) open a browser and enter localhost:8080/firstshot
+7) open a browser and enter `localhost:8080/firstshot`
 
-8) username: hazelcast and password: admin
+8) username: `hazelcast` and password: `admin`
