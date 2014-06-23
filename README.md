@@ -11,6 +11,10 @@ Hazelcast 3.3-EA2 - http://hazelcast.com/products/hazelcast-enterprise/
 Extract .zip file. Drop hazelcast-3.3-EA2-ee.jar and hazelcast-sessions-tomcat7-3.3-EA2.jar to your tomcat-installation-path/lib. They are under /lib of extracted folder.<br />
 
 Next, you must put Hazelcast.xml file to tomcat-installation-directory/lib . You can find a sample Hazelcast.xml file under extracted-hazelcast-folder/bin .
+
+Finally, open tomcat7-installation-folder/conf/target.xml file and add    
+<Manager className="com.hazelcast.session.HazelcastSessionManager" sticky="true"/>
+
 <br />
 <br />
 
@@ -27,4 +31,8 @@ Next, you must put Hazelcast.xml file to tomcat-installation-directory/lib . You
 
 5) maven creates firstshot.war file under sessionReplicationApp/firsthot/target folder.
 
-6) copy 
+6) copy firstshot.war file to tomcat7-installation-path/webapps folder
+
+7) open a browser and enter localhost:8080/firstshot
+
+8) username: hazelcast and password: admin
