@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Enumeration;
 
 /**
  * Created by bilal on 17/06/14.
@@ -11,43 +12,43 @@ import java.io.IOException;
 public class Servletee extends HttpServlet {
     //   int syc=1;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //    response.getWriter().println(request.getParameter("user")+ "  "+request.getParameter("pwd"));
-        if (request.getParameter("user").equals("hazelcast") && request.getParameter("pwd").equals("admin")) {
-            response.getWriter().println("asdsad");
-            HttpSession session = request.getSession();
-            session.setAttribute("username", "hazelcast");
-            session.setAttribute("isLogin","1");
-            doGet(request, response);
 
-        }
     }
-
-
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-//response.getWriter().println(session.getAttribute("username"));
-        //   syc++;
-        //   request.setAttribute("sayac",String.valueOf(syc));
-     //   HttpSession session = request.getSession();
-        if(request.getParameter("fname")!=null){
-            session.setAttribute("name",request.getParameter("fname"));
-        }
-        if(request.getParameter("action")!=null) {
-            if (request.getParameter("action").equals("1") && session.getAttribute("name")!=null) {
-                session.setAttribute("todo", session.getAttribute("name"));
-            }
-            if (request.getParameter("action").equals("2")) {
-                session.removeAttribute("name");
-                session.setAttribute("todo", "");
-            }
-        }
-  //  request.setAttribute("todo",session.getAttribute("name"));
 
-        long  remainingTimeInMilliseconds = 60000-(System.currentTimeMillis() -
-                session.getLastAccessedTime());
-        request.setAttribute("sessiontime",""+remainingTimeInMilliseconds);
-        request.getRequestDispatcher("/hazel.jsp").forward(request, response);
+        if(request.getParameter("key")!=null && request.getParameter("value")!=null){
+            session.setAttribute("key",request.getParameter("value"));
+        }
+if(request.getParameter("action")!=null) {
+    if (request.getParameter("action").equals("set") && request.getParameter("key") != null && request.getParameter("value") != "null") {
+        session.setAttribute(request.getParameter("key"), request.getParameter("value"));
+    }
+
+    if (request.getParameter("action").equals("get") && request.getParameter("key") != null) {
+
+        session.setAttribute("todo", session.getAttribute(request.getParameter("key")));
+    }
+    if (request.getParameter("action").equals("delete") && request.getParameter("key") != null) {
+        session.removeAttribute("todo");
+        session.removeAttribute(request.getParameter("key"));
+    }
+}
+        Enumeration names=session.getAttributeNames();
+        StringBuilder a = new StringBuilder();
+
+        while (names.hasMoreElements()) {
+
+            String name = (String) names.nextElement();
+            a.append("<br>");
+            if(!(name.equals("key")) && !(name.equals("todo")))
+p
+            a.append(name +" " + session.getAttribute(name) + " "+"<br>");
+        }
+        String res=a.toString();
+        request.setAttribute("res",res);
+       request.getRequestDispatcher("/hazel.jsp").forward(request, response);
 
     }
 }

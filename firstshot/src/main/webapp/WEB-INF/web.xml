@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Servletee</servlet-name>
-        <url-pattern>/hazel</url-pattern>
+        <url-pattern>/hazelcast</url-pattern>
     </servlet-mapping>
 
     <session-config>

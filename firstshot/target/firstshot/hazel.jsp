@@ -12,28 +12,36 @@
     <title></title>
 </head>
 <body>
+<div align="center">
+<%
 
-<% if (session.getAttribute("isLogin") == null) { %>
-<p> PLEASE LOGIN </p>
-<% } else {%>
-<p> WELCOME <%=(String)session.getAttribute("username")%>  </p>
-<% } %>
+    if(session.isNew()){ out.println("session is created first time=<br>" + session.getId()+ "\n"); }
+    else { out.println("this session is not new:<br>" + session.getId()); }
+%>
 
-<p> <%=(String)request.getAttribute("sessiontime")%></p>
-<p>result: <%=(String)session.getAttribute("isLogin")%>
-</p>
-
-<p>username: <%=(String)session.getAttribute("username")%>
-</p>
 
 <form action="" method="get">
-    name: <input type="text" name="fname"><br>
+    key: <input type="text" name="key" > <br>
+    value: <input type="text" name="value"><br>
 
-    <input type="submit"  value="set">
+    <input type="submit"  name="action" value="set">
 </form>
-<button onclick="window.location.href='?action=1'">get</button>
-<button onclick="window.location.href='?action=2'">del</button>
-<p>result: <%=(String)session.getAttribute("todo")%>
+
+
+<form action="" method="get">
+    key: <input type="text" name="key" > <br>
+    <input type="submit" name="action" value="get" />
+    <input type="submit" name="action" value="delete" />
+</form>
+
+<p>result:
+<%
+    if(session.getAttribute("todo")!=null){ out.println(session.getAttribute("todo"));
+    }
+%>
 </p>
+<p>key-values: <%=(String)request.getAttribute("res")%>
+</p>
+</div>
 </body>
 </html>
