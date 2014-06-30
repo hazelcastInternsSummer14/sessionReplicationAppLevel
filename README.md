@@ -35,6 +35,5 @@ BEFORE-STARTING : Make sure tomcat-installation-path/startup.sh and tomcat-insta
 
 6) copy firstshot.war file to tomcat7-installation-path/webapps folder
 
-7) open a browser and enter `localhost:8080/firstshot`
+7) open a browser and enter `localhost:8080/firstshot/hazelcast`
 
-8) username: `hazelcast` and password: `admin`
