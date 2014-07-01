@@ -14,7 +14,28 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
+<dependency>
+    <groupId>com.hazelcast</groupId>
+    <artifactId>hazelcast</artifactId>
+    <version>3.2.3</version>
+</dependency>
+<dependency>
+    <groupId>com.hazelcast</groupId>
+    <artifactId>hazelcast-wm</artifactId>
+    <version>3.2.3</version>
+</dependency>
+<dependency>
+    <groupId>com.hazelcast</groupId>
+    <artifactId>hazelcast-client</artifactId>
+    <version>3.2.3</version>
+</dependency>  
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>javax.servlet-api</artifactId>
+	<version>3.0.1</version>
+	<scope>provided</scope>
+</dependency>
+</dependencies>
   <build>
     <finalName>firstshot</finalName>
       <plugins>
@@ -23,10 +44,11 @@
               <artifactId>tomcat7-maven-plugin</artifactId>
               <version>2.0</version>
               <configuration>
-                  <url>http://www.mydomain.com:1234/mymanager</url>
-              </configuration>
+                  <url>http://localhost:8080/manager/text</url>
+              	  <username>admin</username>
+		  <password>admin</password>
+	      </configuration>
           </plugin>
-
       </plugins>
   </build>
 </project>

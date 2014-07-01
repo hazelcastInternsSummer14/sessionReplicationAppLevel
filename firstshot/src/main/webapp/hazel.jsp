@@ -26,9 +26,7 @@
         out.println( "Now changing it to 2 minutes.<br><br>");
         session.setMaxInactiveInterval(2 * 60);
         out.println("The SESSION TIMEOUT period is now " + session.getMaxInactiveInterval()  + " seconds.");
-
     %>
-
 
     <form action="" method="get">
         key: <input type="text" name="key" > <br>
